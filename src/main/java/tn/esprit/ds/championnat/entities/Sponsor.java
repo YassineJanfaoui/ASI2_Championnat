@@ -2,6 +2,7 @@ package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -24,6 +25,41 @@ public class Sponsor {
 
     @Column(name = "bloquer_contrat", nullable = false)
     private Boolean bloquerContrat;
+    private Boolean archived;
+    private LocalDate dateCreation;
+    private LocalDate dateDerniereModification;
+
+    public Boolean getArchived() {
+        return archived;
+    }
+
+    public void setArchived(Boolean archived) {
+        this.archived = archived;
+    }
+
+    public LocalDate getDateCreation() {
+        return dateCreation;
+    }
+
+    public void setDateCreation(LocalDate dateCreation) {
+        this.dateCreation = dateCreation;
+    }
+
+    public LocalDate getDateDerniereModification() {
+        return dateDerniereModification;
+    }
+
+    public void setDateDerniereModification(LocalDate dateDerniereModification) {
+        this.dateDerniereModification = dateDerniereModification;
+    }
+
+    public List<Contrat> getContrats() {
+        return contrats;
+    }
+
+    public void setContrats(List<Contrat> contrats) {
+        this.contrats = contrats;
+    }
 
     @OneToMany(mappedBy = "sponsor")
     private List<Contrat> contrats;
