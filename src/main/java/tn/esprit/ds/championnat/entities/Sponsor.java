@@ -25,6 +25,7 @@ public class Sponsor {
 
     @Column(name = "bloquer_contrat", nullable = false)
     private Boolean bloquerContrat;
+
     private Boolean archived;
     private LocalDate dateCreation;
     private LocalDate dateDerniereModification;
