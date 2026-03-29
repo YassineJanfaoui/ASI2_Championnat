@@ -1,11 +1,13 @@
 package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Table(name = "equipe")
+@Data
 public class Equipe {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,36 +28,4 @@ public class Equipe {
 
     @OneToMany(mappedBy = "equipe")
     private List<Contrat> contrats;
-
-    public Long getIdEquipe() {
-        return idEquipe;
-    }
-
-    public void setIdEquipe(Long idEquipe) {
-        this.idEquipe = idEquipe;
-    }
-
-    public String getLibelle() {
-        return libelle;
-    }
-
-    public void setLibelle(String libelle) {
-        this.libelle = libelle;
-    }
-
-    public int getNbPointsTotal() {
-        return nbPointsTotal;
-    }
-
-    public void setNbPointsTotal(int nbPointsTotal) {
-        this.nbPointsTotal = nbPointsTotal;
-    }
-
-    public int getClassementGeneral() {
-        return classementGeneral;
-    }
-
-    public void setClassementGeneral(int classementGeneral) {
-        this.classementGeneral = classementGeneral;
-    }
 }

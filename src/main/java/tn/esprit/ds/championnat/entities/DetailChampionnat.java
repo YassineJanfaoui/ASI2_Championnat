@@ -1,9 +1,11 @@
 package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "detail_championnat")
+@Data
 public class DetailChampionnat {
 
     @Id
@@ -16,19 +18,4 @@ public class DetailChampionnat {
     @OneToOne(mappedBy = "detailChampionnat")
     private Championnat championnat;
 
-    public String getCode() {
-        return code;
     }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-}

@@ -1,11 +1,14 @@
 package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
+
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity
 @Table(name = "course")
+@Data
 public class Course {
 
     @Id
@@ -24,28 +27,4 @@ public class Course {
 
     @OneToMany(mappedBy = "course")
     private List<Position> positions;
-
-    public Long getIdCourse() {
-        return idCourse;
-    }
-
-    public void setIdCourse(Long idCourse) {
-        this.idCourse = idCourse;
-    }
-
-    public String getEmplacement() {
-        return emplacement;
-    }
-
-    public void setEmplacement(String emplacement) {
-        this.emplacement = emplacement;
-    }
-
-    public LocalDate getDateCourse() {
-        return dateCourse;
-    }
-
-    public void setDateCourse(LocalDate dateCourse) {
-        this.dateCourse = dateCourse;
-    }
 }

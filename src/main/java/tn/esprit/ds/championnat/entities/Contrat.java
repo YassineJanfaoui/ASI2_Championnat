@@ -1,9 +1,11 @@
 package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "contrat")
+@Data
 public class Contrat {
 
     @Id
@@ -25,36 +27,4 @@ public class Contrat {
 
     @ManyToOne
     private Sponsor sponsor;
-
-    public Long getIdContrat() {
-        return idContrat;
-    }
-
-    public void setIdContrat(Long idContrat) {
-        this.idContrat = idContrat;
-    }
-
-    public Float getMontant() {
-        return montant;
-    }
-
-    public void setMontant(Float montant) {
-        this.montant = montant;
-    }
-
-    public String getAnnee() {
-        return annee;
-    }
-
-    public void setAnnee(String annee) {
-        this.annee = annee;
-    }
-
-    public Boolean getArchived() {
-        return archived;
-    }
-
-    public void setArchived(Boolean archived) {
-        this.archived = archived;
-    }
 }

@@ -22,17 +22,20 @@ public class SponsorController {
     public Sponsor addSponsor(@RequestBody Sponsor s){
         return sponsorServices.ajouterSponsor(s);
     }
+
     @Operation(description = "Ajout de plusieurs sponsors")
     @PostMapping("/add-sponsors")
     public List<Sponsor> addSponsors(@RequestBody List<Sponsor> sponsors)
     {
         return sponsorServices.ajouterSponsors(sponsors);
     }
+
     @Operation(description = "modification d'un sponsor")
     @PutMapping("/update-sponsor")
     public Sponsor updateSponsor(@RequestBody Sponsor s){
         return sponsorServices.modifierSponsor(s);
     }
+
     @Operation(description = "supression d'un sponsor")
     @DeleteMapping("/delete-sponsor/{id}")
     public void deleteSponsor(@PathVariable("id") Long id)

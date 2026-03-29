@@ -1,11 +1,13 @@
 package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
 @Table(name = "pilote")
+@Data
 public class Pilote {
 
     @Id
@@ -28,35 +30,4 @@ public class Pilote {
     @ManyToOne
     private Equipe equipe;
 
-    public Long getIdPilote() {
-        return idPilote;
-    }
-
-    public void setIdPilote(Long idPilote) {
-        this.idPilote = idPilote;
-    }
-
-    public String getLibelleP() {
-        return libelleP;
-    }
-
-    public void setLibelleP(String libelleP) {
-        this.libelleP = libelleP;
-    }
-
-    public int getNbPointsTotal() {
-        return nbPointsTotal;
-    }
-
-    public void setNbPointsTotal(int nbPointsTotal) {
-        this.nbPointsTotal = nbPointsTotal;
-    }
-
-    public int getClassementGeneral() {
-        return classementGeneral;
-    }
-
-    public void setClassementGeneral(int classementGeneral) {
-        this.classementGeneral = classementGeneral;
-    }
-}
+   }

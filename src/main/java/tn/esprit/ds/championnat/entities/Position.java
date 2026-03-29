@@ -1,9 +1,11 @@
 package tn.esprit.ds.championnat.entities;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "positions")
+@Data
 public class Position {
 
     @Id
@@ -23,27 +25,4 @@ public class Position {
     @ManyToOne
     private Pilote pilote;
 
-    public Long getIdPosition() {
-        return idPosition;
-    }
-
-    public void setIdPosition(Long idPosition) {
-        this.idPosition = idPosition;
-    }
-
-    public int getClassement() {
-        return classement;
-    }
-
-    public void setClassement(int classement) {
-        this.classement = classement;
-    }
-
-    public int getNbPoints() {
-        return nbPoints;
-    }
-
-    public void setNbPoints(int nbPoints) {
-        this.nbPoints = nbPoints;
-    }
 }
