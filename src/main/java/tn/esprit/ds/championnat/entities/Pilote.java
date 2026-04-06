@@ -27,6 +27,10 @@ public class Pilote {
     @OneToMany(mappedBy = "pilote")
     private List<Position> positions;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name="categorie")
+    private Categorie categorie;
+
     @ManyToOne
     private Equipe equipe;
 
