@@ -17,7 +17,12 @@ import java.util.List;
 public class ContratServicesImpl implements IContratServices{
     ContratRepository contratRepository;
     EquipeRepository equipeRepository;
+
     @Override
+    public void archiverContratsExpireesEtAffichageContratsActifsParEquipe() {
+
+    }
+    /*@Override
     @Scheduled(cron = "0/30 * * * * *")
     public void archiverContratsExpireesEtAffichageContratsActifsParEquipe() {
         Equipe equipe = equipeRepository.findByLibelle("Mercedes");
@@ -35,5 +40,5 @@ public class ContratServicesImpl implements IContratServices{
             }
         }
 
-    }
+    }*/
 }
